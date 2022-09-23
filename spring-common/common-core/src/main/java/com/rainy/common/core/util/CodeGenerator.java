@@ -14,7 +14,7 @@ public class CodeGenerator {
 
     private static final String AUTHOR = "rainy";
 
-    private static final String JDBC_URL = "jdbc:mysql://localhost:33306/visualization?useUnicode=true&characterEncoding=UTF-8" +
+    private static final String JDBC_URL = "jdbc:mysql://localhost:13306/visualization?useUnicode=true&characterEncoding=UTF-8" +
             "&useSSL=false&zeroDateTimeBehavior=convertToNull&";
     private static final String JDBC_USERNAME = "root";
     private static final String JDBC_PASSWORD = "123456";
@@ -27,7 +27,7 @@ public class CodeGenerator {
     private static final String PACKAGE_CONTROLLER = "controller";
 
     private static final String PARENT_DIR = System.getProperty("user.dir") + "/spring-modules/module-web/src/main/";
-    private static final String JAVA_DIR = PARENT_DIR + "/java/com/rainy/modules/web/";
+    private static final String JAVA_DIR = PARENT_DIR + "java/com/rainy/module/web/";
     private static final String XML_PATH = PARENT_DIR + "resources/mapper";
     private static final String ENTITY_PATH = JAVA_DIR + "entity";
     private static final String MAPPER_PATH = JAVA_DIR + "mapper";

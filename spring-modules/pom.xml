@@ -14,6 +14,14 @@
         spring-modules业务模块
     </description>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.rainy</groupId>
+            <artifactId>common-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
     <modules>
         <module>module-web</module>
     </modules>
