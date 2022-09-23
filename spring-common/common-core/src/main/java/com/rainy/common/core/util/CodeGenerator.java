@@ -8,6 +8,8 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.rainy.common.core.entity.BaseEntity;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 // TODO 常量地址未修改
 
 public class CodeGenerator {
@@ -36,6 +38,9 @@ public class CodeGenerator {
     private static final String CONTROLLER_PATH = JAVA_DIR + "controller";
 
     public static void main(String[] args) {
+        List<String> includes = new LinkedList<>();
+        includes.add("project_file");
+        includes.add("project");
         FastAutoGenerator.create(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)
                 .globalConfig(builder -> builder
                         .author(AUTHOR)
@@ -62,7 +67,7 @@ public class CodeGenerator {
                         )
                 )
                 .strategyConfig(builder -> builder
-                        .addInclude("project_structure_file")
+                        .addInclude(includes)
                         // Entity策略配置
                         .entityBuilder()
                         .superClass(BaseEntity.class)

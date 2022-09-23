@@ -14,18 +14,18 @@ import lombok.experimental.Accessors;
 
 /**
  * <p>
- * 项目结构文件表
+ * 项目文件表
  * </p>
  *
  * @author rainy
- * @since 2022-09-23 10:02:03
+ * @since 2022-09-23 11:28:47
  */
 @Getter
 @Setter
 @Accessors(chain = true)
-@TableName("project_structure_file")
-@ApiModel(value = "ProjectStructureFile对象", description = "项目结构文件表")
-public class ProjectStructureFile extends BaseEntity {
+@TableName("project_file")
+@ApiModel(value = "ProjectFile对象", description = "项目文件表")
+public class ProjectFile extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
@@ -41,13 +41,13 @@ public class ProjectStructureFile extends BaseEntity {
     @TableField("file_extension")
     private String fileExtension;
 
+    @ApiModelProperty("文件类型 (0项目文件 1统计文件 2依赖文件)")
+    @TableField("file_type")
+    private Integer fileType;
+
     @ApiModelProperty("文件URL")
     @TableField("file_url")
     private String fileUrl;
-
-    @ApiModelProperty("父文件ID")
-    @TableField("parent_file_id")
-    private Long parentFileId;
 
 
 }

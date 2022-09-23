@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 项目结构文件表 前端控制器
+ * 项目表 前端控制器
  * </p>
  *
  * @author rainy
- * @since 2022-09-23 10:02:03
+ * @since 2022-09-23 11:28:46
  */
 @RestController
-@RequestMapping("/project-structure-file")
-public class ProjectStructureFileController {
+@RequestMapping("/project")
+public class ProjectController {
 
 }

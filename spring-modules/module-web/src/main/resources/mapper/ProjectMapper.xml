@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rainy.module.web.mapper.ProjectMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.rainy.module.web.entity.Project">
+        <id column="project_id" property="projectId" />
+        <result column="is_delete" property="isDelete" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="project_name" property="projectName" />
+        <result column="project_description" property="projectDescription" />
+        <result column="project_structure_file" property="projectStructureFile" />
+        <result column="project_count_file" property="projectCountFile" />
+        <result column="project_relation_file" property="projectRelationFile" />
+        <result column="project_status" property="projectStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        is_delete,
+        create_time,
+        update_time,
+        project_id, project_name, project_description, project_structure_file, project_count_file, project_relation_file, project_status
+    </sql>
+
+</mapper>
