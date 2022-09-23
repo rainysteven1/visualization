@@ -17,6 +17,10 @@ $SPARK_HOME/sbin/start-all.sh
 
 echo -e "\n"
 
+jps
+
+echo -e "\n"
+
 hdfs dfs -mkdir /mr-history
 
 hdfs dfs -mkdir /stage

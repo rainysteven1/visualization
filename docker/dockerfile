@@ -1,4 +1,4 @@
-FROM base:0.2.0
+FROM base:0.2.1
 LABEL authoer="rainy"
 LABEL email="rainysteven1@gmail.com"
 
@@ -65,6 +65,8 @@ RUN set -x && \
     sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/g" /etc/ssh/sshd_config && \
     sed -i "s/#PasswordAuthentication yes/PasswordAuthentication yes/g" /etc/ssh/sshd_config
 RUN /etc/init.d/ssh start
+
+RUN sed -i '1d' /etc/hosts 
 
 RUN echo root:wang120638 | chpasswd
 

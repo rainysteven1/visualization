@@ -16,7 +16,7 @@ public class BaseEntity implements Serializable {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("创建时间")
-    @TableField(value = "insert_time", fill = FieldFill.INSERT)
+    @TableField(value = "create_time", fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
