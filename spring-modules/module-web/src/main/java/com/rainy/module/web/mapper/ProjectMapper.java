@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author rainy
- * @since 2022-09-23 11:28:46
+ * @since 2022-09-23 12:04:56
  */
 @Mapper
 public interface ProjectMapper extends BaseMapper<Project> {

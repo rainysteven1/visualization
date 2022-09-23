@@ -10,7 +10,6 @@ import com.rainy.common.core.entity.BaseEntity;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-// TODO 常量地址未修改
 
 public class CodeGenerator {
 
@@ -41,6 +40,7 @@ public class CodeGenerator {
         List<String> includes = new LinkedList<>();
         includes.add("project_file");
         includes.add("project");
+        includes.add("project_relevance_file");
         FastAutoGenerator.create(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)
                 .globalConfig(builder -> builder
                         .author(AUTHOR)

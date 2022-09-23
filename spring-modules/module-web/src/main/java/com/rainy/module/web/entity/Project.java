@@ -5,7 +5,9 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.rainy.common.core.entity.BaseEntity;
+
 import java.io.Serializable;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -18,7 +20,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author rainy
- * @since 2022-09-23 11:28:46
+ * @since 2022-09-23 12:04:56
  */
 @Getter
 @Setter
@@ -41,19 +43,11 @@ public class Project extends BaseEntity {
     @TableField("project_description")
     private String projectDescription;
 
-    @ApiModelProperty("项目结构文件")
-    @TableField("project_structure_file")
-    private Long projectStructureFile;
+    @ApiModelProperty("项目用户组")
+    @TableField("project_user_group")
+    private Long projectUserGroup;
 
-    @ApiModelProperty("项目统计文件")
-    @TableField("project_count_file")
-    private Long projectCountFile;
-
-    @ApiModelProperty("项目依赖文件")
-    @TableField("project_relation_file")
-    private Long projectRelationFile;
-
-    @ApiModelProperty("项目状态(0 开发中)")
+    @ApiModelProperty("项目状态(0开发中 1测试中 2已发布)")
     @TableField("project_status")
     private Integer projectStatus;
 
