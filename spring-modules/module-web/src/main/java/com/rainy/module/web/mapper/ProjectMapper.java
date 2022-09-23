@@ -14,5 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface ProjectMapper extends BaseMapper<Project> {
-
+    Long insertOne(Project project);
 }

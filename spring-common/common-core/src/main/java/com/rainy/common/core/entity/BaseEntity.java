@@ -14,18 +14,20 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Setter
 public class BaseEntity implements Serializable {
 
+    // TODO 不能加入时间
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("创建时间")
-    @TableField(value = "create_time", fill = FieldFill.INSERT)
+    @TableField(value = "insert_time", fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("更新时间")
-    @TableField(value = "updateAt", fill = FieldFill.INSERT_UPDATE)
+    @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
     @ApiModelProperty("是否删除")
-    @TableField("is_delete")
+    @TableField(value = "is_delete")
     @TableLogic
     private Boolean isDelete;
 }

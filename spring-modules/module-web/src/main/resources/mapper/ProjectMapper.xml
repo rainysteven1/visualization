@@ -4,14 +4,14 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.rainy.module.web.entity.Project">
-        <id column="project_id" property="projectId" />
-        <result column="is_delete" property="isDelete" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="project_name" property="projectName" />
-        <result column="project_description" property="projectDescription" />
-        <result column="project_user_group" property="projectUserGroup" />
-        <result column="project_status" property="projectStatus" />
+        <id column="project_id" property="projectId"/>
+        <result column="is_delete" property="isDelete"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="project_name" property="projectName"/>
+        <result column="project_description" property="projectDescription"/>
+        <result column="project_user_group" property="projectUserGroup"/>
+        <result column="project_status" property="projectStatus"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->
@@ -21,5 +21,11 @@
         update_time,
         project_id, project_name, project_description, project_user_group, project_status
     </sql>
+
+    <insert id="insertOne" parameterType="com.rainy.module.web.entity.Project" useGeneratedKeys="true"
+            keyProperty="projectId">
+        insert into project(project_name, project_description, project_user_group, project_status)
+        values (#{projectName}, #{projectDescription}, #{projectUserGroup}, #{projectStatus})
+    </insert>
 
 </mapper>

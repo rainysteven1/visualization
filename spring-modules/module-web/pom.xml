@@ -10,6 +10,20 @@
 
     <artifactId>module-web</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.rainy</groupId>
+            <artifactId>common-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.rainy</groupId>
+            <artifactId>module-bigdata</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
     <description>
         module-web网络模块

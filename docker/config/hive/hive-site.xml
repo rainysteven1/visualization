@@ -7,11 +7,11 @@
         </property>
         <property>
                 <name>hive.exec.scratchdir</name>
-                <value>/userlocal/hive/tmp</value>
+                <value>/user/hive/tmp</value>
         </property>
         <property>
                 <name>hive.querylog.location</name>
-                <value>/userlocal/hive/log</value>
+                <value>/user/hive/log</value>
         </property>
         <property> 
                 <name>hive.metastore.uris</name> 
