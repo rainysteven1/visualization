@@ -24,8 +24,10 @@
 
     <insert id="insertOne" parameterType="com.rainy.module.web.entity.Project" useGeneratedKeys="true"
             keyProperty="projectId">
-        insert into project(project_name, project_description, project_user_group, project_status)
-        values (#{projectName}, #{projectDescription}, #{projectUserGroup}, #{projectStatus})
+        insert into project(project_name, project_description, project_user_group, project_status, create_time,
+                            update_time)
+        values (#{projectName}, #{projectDescription}, #{projectUserGroup}, #{projectStatus}, #{createTime},
+                #{updateTime})
     </insert>
 
 </mapper>

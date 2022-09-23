@@ -14,8 +14,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Setter
 public class BaseEntity implements Serializable {
 
-    // TODO 不能加入时间
-
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty("创建时间")
     @TableField(value = "insert_time", fill = FieldFill.INSERT)
