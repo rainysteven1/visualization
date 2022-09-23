@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<configuration>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <!-- 配置实际的Master主机名和端口-->
+        <value>master:10020</value>
+    </property>
+    <property>
+      <name>mapreduce.jobhistory.webapp.address</name>
+      <value>master:19888</value>
+    </property>
+    <property>
+      <name>yarn.app.mapreduce.am.staging-dir</name>
+      <value>/stage</value>
+    </property>
+    <property>
+      <name>mapreduce.jobhistory.done-dir</name>
+      <value>/mr-history/done</value>
+    </property>
+    <property>
+      <name>mapreduce.jobhistory.intermediate-done-dir</name>
+      <value>/mr-history/tmp</value>
+    </property>
+
+    <property>
+      <name>yarn.app.mapreduce.am.env</name>
+      <value>HADOOP_MAPRED_HOME=/usr/local/hadoop-3.2.0/etc/hadoop:/usr/local/hadoop-3.2.0/share/hadoop/common/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/common/*:/usr/local/hadoop-3.2.0/share/hadoop/hdfs:/usr/local/hadoop-3.2.0/share/hadoop/hdfs/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/hdfs/*:/usr/local/hadoop-3.2.0/share/hadoop/mapreduce/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/mapreduce/*:/usr/local/hadoop-3.2.0/share/hadoop/yarn:/usr/local/hadoop-3.2.0/share/hadoop/yarn/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/yarn/*</value>
+    </property>
+    <property>
+      <name>mapreduce.map.env</name>
+      <value>HADOOP_MAPRED_HOME=/usr/local/hadoop-3.2.0/etc/hadoop:/usr/local/hadoop-3.2.0/share/hadoop/common/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/common/*:/usr/local/hadoop-3.2.0/share/hadoop/hdfs:/usr/local/hadoop-3.2.0/share/hadoop/hdfs/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/hdfs/*:/usr/local/hadoop-3.2.0/share/hadoop/mapreduce/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/mapreduce/*:/usr/local/hadoop-3.2.0/share/hadoop/yarn:/usr/local/hadoop-3.2.0/share/hadoop/yarn/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/yarn/*</value>
+    </property>
+    <property>
+      <name>mapreduce.reduce.env</name>
+      <value>HADOOP_MAPRED_HOME=/usr/local/hadoop-3.2.0/etc/hadoop:/usr/local/hadoop-3.2.0/share/hadoop/common/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/common/*:/usr/local/hadoop-3.2.0/share/hadoop/hdfs:/usr/local/hadoop-3.2.0/share/hadoop/hdfs/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/hdfs/*:/usr/local/hadoop-3.2.0/share/hadoop/mapreduce/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/mapreduce/*:/usr/local/hadoop-3.2.0/share/hadoop/yarn:/usr/local/hadoop-3.2.0/share/hadoop/yarn/lib/*:/usr/local/hadoop-3.2.0/share/hadoop/yarn/*</value>
+    </property>
+</configuration>
