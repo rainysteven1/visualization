@@ -5,6 +5,7 @@ import com.rainy.module.web.mapper.ProjectRelevanceFileMapper;
 import com.rainy.module.web.service.ProjectRelevanceFileService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
  * @since 2022-09-23 12:04:57
  */
 @Service
+@Transactional
 public class ProjectRelevanceFileServiceImpl extends ServiceImpl<ProjectRelevanceFileMapper, ProjectRelevanceFile> implements ProjectRelevanceFileService {
 
 }

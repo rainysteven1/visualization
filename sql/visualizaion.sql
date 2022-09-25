@@ -12,7 +12,7 @@ create table project_file
     file_name      varchar(50)  not null default '' comment '文件名称',
     file_extension varchar(5)   not null default '' comment '文件后缀',
     file_type      tinyint(2)   not null default 0 comment '文件类型 (0项目文件 1统计文件 2依赖文件)',
-    file_url       varchar(100) not null default '' comment '文件URL',
+    file_url       varchar(300) not null default '' comment '文件URL',
     is_delete      tinyint(1)   not null default 1 comment '文件是否删除（0否 1是）',
     create_time    datetime comment '文件创建时间',
     update_time    datetime comment '文件更新时间',

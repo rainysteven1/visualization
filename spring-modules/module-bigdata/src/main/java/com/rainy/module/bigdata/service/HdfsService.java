@@ -26,7 +26,7 @@ public class HdfsService {
 
     static {
         config = HdfsConfig.builder()
-                .path("hdfs://127.0.0.1:19000/")
+                .path("hdfs://master:9000/")
                 .user("root")
                 .build();
         Configuration configuration = new Configuration();
