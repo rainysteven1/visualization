@@ -9,6 +9,14 @@
         <value>file:/usr/local/hadoop-3.2.0/dfs/data</value>
     </property>
     <property>
+        <name>dfs.client.use.datanode.hostname</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>dfs.datanode.use.datanode.hostname</name>
+        <value>true</value>
+    </property>
+    <property>
         <name>dfs.webhdfs.enabled</name>
         <value>true</value>
     </property>
@@ -20,8 +28,14 @@
         <name>dfs.permissions.enabled</name>
         <value>false</value>
     </property>
+
+
     <property>
         <name>dfs.http.address</name>
         <value>0.0.0.0:50070</value>
     </property>
- </configuration>
+    <property>
+        <name>dfs.datanode.address</name>
+        <value>0.0.0.0:50010</value>
+    </property>
+</configuration>

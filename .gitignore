@@ -33,3 +33,6 @@ build/
 ### docker ###
 docker/software/
 docker/mysql/
+
+## 操作系统 ##
+.DS_store

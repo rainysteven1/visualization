@@ -2,11 +2,11 @@
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://master:9000/</value>
+        <value>hdfs://master:9000</value>
     </property>
     <property>
-         <name>hadoop.tmp.dir</name>
-         <value>file:/usr/local/hadoop-3.2.0/tmp</value>
+        <name>hadoop.tmp.dir</name>
+        <value>file:/usr/local/hadoop-3.2.0/tmp</value>
     </property>
     <property>
         <name>hadoop.proxyuser.root.hosts</name>

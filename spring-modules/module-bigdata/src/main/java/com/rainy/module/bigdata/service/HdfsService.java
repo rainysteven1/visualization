@@ -26,11 +26,13 @@ public class HdfsService {
 
     static {
         config = HdfsConfig.builder()
-                .path("hdfs://localhost:19000")
+                .path("hdfs://127.0.0.1:19000/")
                 .user("root")
                 .build();
         Configuration configuration = new Configuration();
+        configuration.setBoolean("dfs.client.use.datanode.hostname", true);
         configuration.set("fs.defaultFS", config.getPath());
+        configuration.set("fs.hdfs.impl", "org.apache.hadoop.hdfs.DistributedFileSystem");
         try {
             // 获得FileSystem对象，指定使用root用户上传
             fileSystem = FileSystem.get(new URI(config.getPath()), configuration,
