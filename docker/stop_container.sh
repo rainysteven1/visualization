@@ -1,4 +1,3 @@
-#! /usr/bin/sh
 docker stop master
 docker stop worker1
 docker stop worker2
