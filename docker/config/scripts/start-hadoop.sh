@@ -21,6 +21,10 @@ jps
 
 echo -e "\n"
 
+hadoop dfsadmin -safemode leave
+
+echo -e "\n"
+
 hdfs dfs -mkdir /mr-history
 
 hdfs dfs -mkdir /stage
