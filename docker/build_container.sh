@@ -1,3 +1,6 @@
+echo build container
+docker build -t bigdata:$1 .
+
 echo start master container ...
 docker run -itd --name master --network bigdata-net --ip 172.20.0.2 -h master --privileged --add-host worker1:172.20.0.3 --add-host worker1:172.20.0.4 --add-host mysql:172.20.0.5 bigdata:$1
 

@@ -1,19 +1,21 @@
 package com.rainy.module.web.service.impl;
 
 import com.rainy.module.bigdata.service.HdfsService;
+import com.rainy.module.bigdata.service.SparkService;
 import com.rainy.module.web.entity.ProjectFile;
 import com.rainy.module.web.mapper.ProjectFileMapper;
 import com.rainy.module.web.service.ProjectFileService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import entity.ProjectFileScala;
+import org.apache.hadoop.util.hash.Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.multipart.MultipartFile;
+import service.AnalysisProject;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -28,13 +30,17 @@ import java.util.stream.Stream;
 @Transactional
 public class ProjectFileServiceImpl extends ServiceImpl<ProjectFileMapper, ProjectFile> implements ProjectFileService {
 
+    @Autowired
+    private SparkService sparkService;
 
     @Override
     public Boolean createBatch(MultiValueMap<String, MultipartFile> multiValueMap) {
         UUID projectUUID = UUID.randomUUID();
         List<ProjectFile> projectFileList = new LinkedList<>();
+        Map<String, List<ProjectFileScala>> projectFileScalaMap = new HashMap<>();
         multiValueMap.forEach((key, values) -> {
             String path = String.format("%s/%s", projectUUID, key);
+            List<ProjectFileScala> projectFileScalaList = new LinkedList<>();
             values.forEach((value) -> {
                 String fileUrl = HdfsService.uploadFile(value, path);
                 String fileName = value.getOriginalFilename();
@@ -47,8 +53,11 @@ public class ProjectFileServiceImpl extends ServiceImpl<ProjectFileMapper, Proje
                         .fileType(getFileTypeByParam(key))
                         .fileUrl(fileUrl)
                         .build());
+                projectFileScalaList.add(new ProjectFileScala(fileName, fileUrl));
             });
+            projectFileScalaMap.put(key, projectFileScalaList);
         });
+        sparkService.createAnalysisProjectTask(projectFileScalaMap);
         return this.saveBatch(projectFileList);
     }
 

@@ -10,6 +10,12 @@
 
     <artifactId>spring-common</artifactId>
 
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common-core</module>
+    </modules>
+
     <description>
         spring-common通用模块
     </description>

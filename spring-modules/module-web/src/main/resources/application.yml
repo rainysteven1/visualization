@@ -21,5 +21,20 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
+spark:
+  app:
+    name: visualization
+  master:
+    uri: spark://master:7077
+  driver:
+    memory: 2g
+  worker:
+    memory: 2g
+  executor:
+    memory: 1g
+  rpc:
+    message:
+      maxSize: 1024
+
 custom-response:
   enabled:true
